@@ -8,10 +8,7 @@ gem 'rails', '3.2.8'
 gem 'sqlite3'
 
 # OUR RAILS ENGINE
-gem 'omelet-ui', :git => "git://github.com/nybblr/omelet-ui"
-
-# Gem management dependency
-gem 'jeweler'
+gem 'omelet_ui', :git => "git://github.com/nybblr/omelet_ui", :require => "omelet_ui"
 
 # Storage
 gem 'paperclip' # manage model file attachments
@@ -79,5 +76,4 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
-
 
