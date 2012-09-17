@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/nybblr/omelet_ui
-  revision: 19238928e25050500590b70665c6795c7fb9efef
+  revision: 4ea3dbbbf93411b4cb3c3d18b94da9d6f04c11b1
   specs:
-    omelet_ui (0.0.1)
+    omelet_ui (0.0.2)
       bourbon
       foreman
       friendly_id
