@@ -1,0 +1,6 @@
+- if user_signed_in?
+	%p
+		Hello
+		= mail_to current_user.email
+		&mdash; need to
+		= link_to "sign out?", destroy_user_session_path, :method => :delete

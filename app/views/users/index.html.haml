@@ -3,3 +3,14 @@
 %p
 	You might want to
 	= link_to "sign in.", new_user_session_path
+
+%h2 Btw here are all the people registered on the site:
+%table
+	%thead
+		%th ID
+		%th Email
+	%tbody
+		- for user in @users do
+			%tr
+				%td= user.id
+				%td= user.email
