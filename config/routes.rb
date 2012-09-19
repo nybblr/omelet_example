@@ -2,6 +2,10 @@ OmeletExample::Application.routes.draw do
   devise_for :users
 	mount OmeletUi::Engine => "/omelet"
 
+	resources :users
+
+	root :to => "users#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

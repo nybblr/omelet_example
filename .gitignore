@@ -13,3 +13,6 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# We don't want cached plugins on GitHub
+/vendor/plugins/*
