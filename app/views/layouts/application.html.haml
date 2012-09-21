@@ -1,14 +1,17 @@
 !!! 5
-%html{ html_attrs }
-	%head
-		%title Omelet Example App
-		= stylesheet_link_tag    "application", :media => "all"
-		= javascript_include_tag "application"
-		= csrf_meta_tags
+-# http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither
+- html_tag :class => "no-js", :lang => "en" do
+  = render "head"
 
-	%body
-		= render :partial => 'layouts/topbar'
-		%article
-			-# = render :partial => 'layouts/breadcrumb'
-			= yield
+  %body{ :class => "#{ controller.controller_name }" }
+    = render "chromeframe"
+    = render "header"
 
+    #main{ :role => "main" }
+      = render "flashes"
+      = yield
+
+    = render "footer"
+
+    -# Javascript at the bottom for fast page loading
+    = render "javascripts"
