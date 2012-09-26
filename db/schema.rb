@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120917190950) do
+ActiveRecord::Schema.define(:version => 20120926164313) do
+
+  create_table "omelet_ui_templates", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.text     "layout"
+    t.string   "status"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
