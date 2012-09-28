@@ -16,3 +16,6 @@
 
 # We don't want cached plugins on GitHub
 /vendor/plugins/*
+
+# Nor do we want to track the Gemfile lock
+/Gemfile.lock
