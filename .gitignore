@@ -19,3 +19,7 @@
 
 # Nor do we want to track the Gemfile lock
 /Gemfile.lock
+
+# Don't want vim sessions
+Session.vim
+default.vim
