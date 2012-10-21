@@ -4,4 +4,10 @@ OmeletUi.setup do |config|
 
 	# Unique ID to identify app's reports on queue server
 	config.app_id = "oss.nybblr.Omelet.Example"
+
+	# Set the current_user method for User ID
+	# config.current_user = :current_user
+
+	# Set the identifier method for User ID
+	# config.identifier = :identifer
 end
