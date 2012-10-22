@@ -4,3 +4,8 @@
 		= mail_to current_user.email
 		&mdash; need to
 		= link_to "sign out?", destroy_user_session_path, :method => :delete
+
+	%p
+		Click
+		= link_to "here", "omelet/reports"
+		to open the main reporting screen for the current user.
