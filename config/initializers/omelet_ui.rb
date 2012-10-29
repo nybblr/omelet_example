@@ -10,4 +10,10 @@ OmeletUi.setup do |config|
 
 	# Set the identifier method for User ID
 	# config.identifier = :identifer
+
+	# Set the app name
+	config.app_name = "Atari"
+
+	# Set the app homepage
+	config.home_path = "/"
 end
