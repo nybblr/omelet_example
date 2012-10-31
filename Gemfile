@@ -40,13 +40,22 @@ gem 'squeel' # WHERE queries without raw SQL fragments
 gem 'rb-readline'
 
 # Testing
-gem 'rspec-rails', :group => [:test, :development]
-group :test do
-	gem 'shoulda' # clean RSpec asserts
-	gem 'factory_girl_rails' # factory generation
-	gem 'capybara' # integration testing
-	# gem 'capybara-webkit' # webkit-based JavaScript testing
+group :test, :developement do
+	gem 'turn'
+	gem 'rspec-rails'
+	gem 'capybara'
+	gem 'guard-rspec'
+	gem 'launchy'
 end
+
+# OldTesting
+#gem 'rspec-rails', :group => [:test, :development]
+#group :test do
+#	gem 'shoulda' # clean RSpec asserts
+#	gem 'factory_girl_rails' # factory generation
+#	gem 'capybara' # integration testing
+#	# gem 'capybara-webkit' # webkit-based JavaScript testing
+#end
 
 # Gems used only for assets and not required
 # in production environments by default.
