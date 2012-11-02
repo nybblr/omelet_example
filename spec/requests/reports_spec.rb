@@ -22,17 +22,25 @@ describe "Reports" do
 
   	it "should dislpay all the reports" do
       #
+      click_link 'show'
   	end
 
 
     it "should gets a report to display" do
       #
+      click_link 'Display'
     end
   end
 
   describe "PUT /reports" do
-    it "edits a task" do
-      #
+    it "should allow a user to edit a report's metadata" do
+      click_link 'Edit'
+    end
+  end
+
+  describe "CREATE /reports" do
+    it "should allow a user to generate a new report" do
+      click_link 'make a new report?'
     end
   end
 
@@ -41,6 +49,7 @@ describe "Reports" do
     		#find("#report_#{@report.id}").click_link "Delete"
     		#page.should have_content 'Report has been deleted'
     		#page.should have_no_content 'Sales report'
+        click_link 'Delete'
     end
   end
 end

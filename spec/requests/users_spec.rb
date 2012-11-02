@@ -25,6 +25,14 @@ describe "Users" do
     end
   end
 
+  describe "VIEW /users" do
+    it "should not let a user that is not logged in view reports" do
+      visit users_path
+      page.should have_no_content 'You can see your reports here!'
+    end
+  end
+
+
   describe "PUT /users" do
       it "should not allow you to log in without an existing user account" do
         visit users_path
@@ -140,8 +148,37 @@ describe "Users" do
         page.should have_no_content 'view reports'
       end
 
-      it "should not allow a user to sign up with an invalid password confirmation" do
+      it "should not allow a logged out user to view the email of other users" do
+        visit users_path
+        click_link 'sign in'
+        click_link 'Sign up'
 
+        fill_in 'Email', :with => 'tester@gmail.com'
+        fill_in 'Password', :with => 'password'
+        fill_in 'Password confirmation', :with => 'password'
+
+        click_button 'Sign up'
+
+        current_path.should == root_path
+
+        visit users_path
+        page.should have_content 'need to sign out?'
+        click_link 'sign out?'
+        page.should have_no_content 'tester@gmail.com'
+
+      end
+
+      it "should not allow a user to sign up with an invalid password confirmation" do
+        visit users_path
+        click_link 'sign in'
+        click_link 'Sign up'
+
+        fill_in 'Email', :with => 'tester@gmail.com'
+        fill_in 'Password', :with => 'password'
+        fill_in 'Password confirmation', :with => 'password'
+
+        click_button 'Sign up'
+        page.should have_content "doesn't match confirmation"
       end
 
       it "should allow multiple users to sign into the application" do
