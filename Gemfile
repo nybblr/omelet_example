@@ -41,7 +41,7 @@ gem 'rb-readline'
 
 # Testing
 group :test, :developement do
-	gem 'turn'
+	#gem 'turn'
 	gem 'rspec-rails'
 	gem 'capybara'
 	gem 'guard-rspec'
