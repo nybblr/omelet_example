@@ -8,7 +8,7 @@ gem 'rails', '3.2.8'
 gem 'sqlite3'
 
 # OUR RAILS ENGINE
-gem 'omelet_ui', :git => "git://github.com/nybblr/omelet_ui", :require => "omelet_ui", :path => "/home/b/Desktop/Untitled Folder/omelet_ui"
+gem 'omelet_ui', :git => "git://github.com/nybblr/omelet_ui", :require => "omelet_ui"
 
 # Storage
 gem 'paperclip' # manage model file attachments
