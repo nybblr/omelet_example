@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121116173454) do
+ActiveRecord::Schema.define(:version => 20121126175905) do
+
+  create_table "monthly_sales", :force => true do |t|
+    t.string   "type"
+    t.string   "total_cents"
+    t.string   "total_currency"
+    t.integer  "units"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.datetime "date"
+  end
 
   create_table "omelet_ui_templates", :force => true do |t|
     t.string   "title"
