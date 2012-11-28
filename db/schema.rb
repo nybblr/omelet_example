@@ -11,10 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121126175905) do
+ActiveRecord::Schema.define(:version => 20121128155620) do
 
   create_table "monthly_sales", :force => true do |t|
-    t.string   "type"
+    t.string   "category"
     t.string   "total_cents"
     t.string   "total_currency"
     t.integer  "units"

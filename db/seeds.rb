@@ -6,22 +6,22 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-MonthlySales.create(:type => "Electronics", :total_cents => "154662", :total_currency => "USD", :units => 437, :date => Date.today)
-MonthlySales.create(:type => "Electronics", :total_cents => "163463", :total_currency => "USD", :units => 204, :date => Date.today)
-MonthlySales.create(:type => "Electronics", :total_cents => "133614", :total_currency => "USD", :units => 382, :date => Date.today)
-MonthlySales.create(:type => "Electronics", :total_cents => "115235", :total_currency => "USD", :units => 318, :date => Date.today)
-MonthlySales.create(:type => "Electronics", :total_cents => "190843", :total_currency => "USD", :units => 248, :date => Date.today)
-MonthlySales.create(:type => "Electronics", :total_cents => "134458", :total_currency => "USD", :units => 177, :date => Date.today)
-MonthlySales.create(:type => "Electronics", :total_cents => "128288", :total_currency => "USD", :units => 204, :date => Date.today)
-MonthlySales.create(:type => "Electronics", :total_cents => "165055", :total_currency => "USD", :units => 93, :date => Date.today)
-MonthlySales.create(:type => "Electronics", :total_cents => "139301", :total_currency => "USD", :units => 490, :date => Date.today)
-MonthlySales.create(:type => "Electronics", :total_cents => "123663", :total_currency => "USD", :units => 315, :date => Date.today)
-MonthlySales.create(:type => "Electronics", :total_cents => "115676", :total_currency => "USD", :units => 493, :date => Date.today)
-MonthlySales.create(:type => "Electronics", :total_cents => "133039", :total_currency => "USD", :units => 147, :date => Date.today)
-MonthlySales.create(:type => "Furniture", :total_cents => "106274", :total_currency => "USD", :units => 324, :date => Date.today)
-MonthlySales.create(:type => "Furniture", :total_cents => "145986", :total_currency => "USD", :units => 492, :date => Date.today)
-MonthlySales.create(:type => "Furniture", :total_cents => "144717", :total_currency => "USD", :units => 420, :date => Date.today)
-MonthlySales.create(:type => "Furniture", :total_cents => "151780", :total_currency => "USD", :units => 204, :date => Date.today)
+MonthlySales.create(:category => "Electronics", :total_cents => "154662", :total_currency => "USD", :units => 437, :date => Date.today).save
+MonthlySales.create(:category => "Electronics", :total_cents => "163463", :total_currency => "USD", :units => 204, :date => Date.today).save
+MonthlySales.create(:category => "Electronics", :total_cents => "133614", :total_currency => "USD", :units => 382, :date => Date.today).save
+MonthlySales.create(:category => "Electronics", :total_cents => "115235", :total_currency => "USD", :units => 318, :date => Date.today).save
+MonthlySales.create(:category => "Electronics", :total_cents => "190843", :total_currency => "USD", :units => 248, :date => Date.today).save
+MonthlySales.create(:category => "Electronics", :total_cents => "134458", :total_currency => "USD", :units => 177, :date => Date.today).save
+MonthlySales.create(:category => "Electronics", :total_cents => "128288", :total_currency => "USD", :units => 204, :date => Date.today).save
+MonthlySales.create(:category => "Electronics", :total_cents => "165055", :total_currency => "USD", :units => 93, :date => Date.today) .save
+MonthlySales.create(:category => "Electronics", :total_cents => "139301", :total_currency => "USD", :units => 490, :date => Date.today).save
+MonthlySales.create(:category => "Electronics", :total_cents => "123663", :total_currency => "USD", :units => 315, :date => Date.today).save
+MonthlySales.create(:category => "Electronics", :total_cents => "115676", :total_currency => "USD", :units => 493, :date => Date.today).save
+MonthlySales.create(:category => "Electronics", :total_cents => "133039", :total_currency => "USD", :units => 147, :date => Date.today).save
+MonthlySales.create(:category => "Furniture", :total_cents => "106274", :total_currency => "USD", :units => 324, :date => Date.today).save
+MonthlySales.create(:category => "Furniture", :total_cents => "145986", :total_currency => "USD", :units => 492, :date => Date.today).save
+MonthlySales.create(:category => "Furniture", :total_cents => "144717", :total_currency => "USD", :units => 420, :date => Date.today).save
+MonthlySales.create(:category => "Furniture", :total_cents => "151780", :total_currency => "USD", :units => 204, :date => Date.today).save
 MonthlySales.create(:type => "Furniture", :total_cents => "143192", :total_currency => "USD", :units => 406, :date => Date.today)
 MonthlySales.create(:type => "Furniture", :total_cents => "117125", :total_currency => "USD", :units => 22, :date => Date.today)
 MonthlySales.create(:type => "Furniture", :total_cents => "167624", :total_currency => "USD", :units => 485, :date => Date.today)
