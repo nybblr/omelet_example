@@ -1,10 +1,26 @@
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-<script type="text/javascript">
-	google.load("visualization", "1", {packages:["corechart"]});
-	google.setOnLoadCallback(drawChart);
-	function drawChart() {
-		var data = google.visualization.arrayToDataTable([
-			['Month', 'Online', 'Direct Order'],
+<%
+	# Organize into month bins
+	h = {}
+	for r in @results do
+		month = Date.parse(r[:date]).strftime("%B")
+		h[month] ||= []
+		h[month] << r
+	end
+
+	string = ""
+	cats = h["January"].map {|r| r[:category] }
+
+	string += "['Month', '#{cats.join "', '"}'],\n"
+	h.each do |m, v|
+		string += "['#{m}', "
+		for r in v do
+			string += "#{r[:units]}, "
+		end
+		string += "],\n"
+	end
+
+%>
+<!--			['Month', 'Online', 'Direct Order'],
 			['January',  1000,      400],
 			['Feburary',  1170,      460],
 			['March',  660,       1120],
@@ -16,6 +32,14 @@
 			['October',  1190,       1300],
 			['November',  900,       430],
 			['December',  1490,       1120]
+			-->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+	google.load("visualization", "1", {packages:["corechart"]});
+	google.setOnLoadCallback(drawChart);
+	function drawChart() {
+		var data = google.visualization.arrayToDataTable([
+				<%= string.html_safe %>
 		]);
 
 		var options = {
@@ -35,7 +59,7 @@
 		<div id="hd">
 			<div class="yui-gc">
 				<div class="yui-u first">
-					<h1>Sales Report</h1>
+					<h1><%= @report.title %></h1>
 					<h2>2011 in review</h2>
 				</div>
 
