@@ -1,26 +1,53 @@
-%h1 Hi there!
-%p You're running an example app that demonstrates the Omelet open-source reporting system!
-%p
-	You can see your reports
-	= link_to "here!", "/omelet/reports"
-%p
-	Or maybe you'd like to
-	= link_to "make a new report?", "/omelet/reports/new?template_id=1"
-%p
-	You might want to
-	= link_to "sign in.", new_user_session_path
-
-%p
-	You can edit the templates
-	= link_to "here", "/omelet/templates"
-
-%h2 Btw here are all the people registered on the site:
-%table
-	%thead
-		%th ID
-		%th Email
-	%tbody
-		- for user in @users do
-			%tr
-				%td= user.id
-				%td= user.email
+- if user_signed_in?
+	%table{:border => "1", :cellpadding => "0", :cellspacing => "0", :style => "background-color: #ffffff;", :width =>"800"}
+		%tr
+			%td
+				= image_tag "logo.bmp"
+				%table{:border => "0", :cellpadding => "3", :width => "100%"}
+					%tr
+						%td
+							Hello
+							%i
+								= current_user.email
+						%td{:align => "right"}
+							Need to
+							= link_to "sign out?", destroy_user_session_path, :method => :delete
+		%tr
+			%td
+				%table{:border => "0", :cellpadding => "3", :width => "100%"}
+					%tr
+						%td
+							%center
+								%table
+									%tr
+										%td
+											%p
+												= link_to image_tag("reports.jpg"), "/omelet/reports"
+										%td{:style => "vertical-align:middle"}
+											%p
+												%font{:size => 5}
+													= link_to "View Reports", "/omelet/reports"
+												%br
+													Display Reporting Dashboard
+									%tr
+										%td
+											%p
+												= link_to image_tag("new_report.jpg"), "/omelet/reports/new?template_id=1"
+										%td{:style => "vertical-align:middle"}
+											%p
+												%font{:size => 5}
+													= link_to "New Report", "/omelet/reports/new?template_id=1"
+												%br
+													Create a New Report Here
+									%tr
+										%td
+											%p
+												= link_to image_tag("template.jpg"), "/omelet/templates"
+										%td{:style => "vertical-align:middle"}
+											%p
+												%font{:size => 5}
+													= link_to "View Templates", "/omelet/templates"
+												%br
+													Display Saved Templates
+- else
+	%meta{:content => "0;url=users/sign_in", "http-equiv" => "REFRESH"}/

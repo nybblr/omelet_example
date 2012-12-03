@@ -1,4 +1,19 @@
-<h2>Sign in</h2>
+
+<table border=1 cellpadding=0 cellspacing=0>
+	<tr><td>
+
+
+<table border=0 cellpadding=0 cellspacing=0 style="background-color: #ffffff;">
+<tr><td colspan=2>
+<%= image_tag "logo.bmp" %>
+</td>
+</tr>
+
+<tr>
+<td width=130>
+</td>
+<td colspan=2>
+<p />
 
 <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   <div class="form-inputs">
@@ -11,5 +26,20 @@
     <%= f.button :submit, "Sign in" %>
   </div>
 <% end %>
+</td>
+</tr>
 
-<%= render "devise/shared/links" %>
+<tr>
+	<td colspan=2>
+
+<p />
+<center><%= render "devise/shared/links" %></center>
+<p />
+
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
