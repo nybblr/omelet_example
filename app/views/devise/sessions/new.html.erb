@@ -1,45 +1,39 @@
 
 <table border=1 cellpadding=0 cellspacing=0>
-	<tr><td>
+  <tr>
+    <td>
+      <table border=0 cellpadding=0 cellspacing=0 style="background-color: #ffffff;">
+        <tr>
+          <td colspan="2">
+            <%= image_tag "logo.bmp" %>
+          </td>
+        </tr>
+        <tr>
+          <td width=130>
+          </td>
+          <td>
+            <p />
+            <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+              <div class="form-inputs">
+                <%= f.input :email, :required => false, :autofocus => true %>
+                <%= f.input :password, :required => false %>
+                <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
+              </div>
 
-
-<table border=0 cellpadding=0 cellspacing=0 style="background-color: #ffffff;">
-<tr><td colspan=2>
-<%= image_tag "logo.bmp" %>
-</td>
-</tr>
-
-<tr>
-<td width=130>
-</td>
-<td colspan=2>
-<p />
-
-<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email, :required => false, :autofocus => true %>
-    <%= f.input :password, :required => false %>
-    <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign in" %>
-  </div>
-<% end %>
-</td>
-</tr>
-
-<tr>
-	<td colspan=2>
-
-<p />
-<center><%= render "devise/shared/links" %></center>
-<p />
-
-</td>
-</tr>
-</table>
-
-</td>
-</tr>
+              <div class="form-actions">
+                <%= f.button :submit, "Sign in" %>
+              </div>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td colspan=2>
+            <p />
+            <center><%= render "devise/shared/links" %></center>
+            <p />
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
 </table>
